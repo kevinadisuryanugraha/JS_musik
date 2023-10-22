@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Import drum
+        let audiobass = new Audio();
+        audiobass.src = "drum/bass.mp3";
+
+        let audiocrash = new Audio();
+        audiocrash.src = "drum/crash.mp3";
+
+        let audioft = new Audio();
+        audioft.src = "drum/floor-tom.mp3";
+
+        let audiohf = new Audio();
+        audiohf.src = "drum/hihat-foot.mp3";
+
+        let audioho = new Audio();
+        audioho.src = "drum/hihat-open.mp3";
+
+        let audiohihat = new Audio();
+        audiohihat.src = "drum/hihat.mp3";
+
+        let audioride = new Audio();
+        audioride.src = "drum/ride.mp3";
+
+        let audiosd = new Audio();
+        audiosd.src = "drum/share-drum.mp3";
+
+        let audioss = new Audio();
+        audioss.src = "drum/share-stick.mp3";
+
+        let audiotom1 = new Audio();
+        audiotom1.src = "drum/tom1.mp3";
+
+        let audiotom2 = new Audio();
+        audiotom2.src = "drum/tom2.mp3";
+    </script>
+</head>
+
+<body class="bg-[url('image/drum.jpg')] bg-cover">
+    <div onclick="play_drum('hihatOpen')"
+        class="getar cursor-pointer absolute flex w-44 h-44 rounded-full bg-gradient-to-br from-yellow-500 to-yellow-900 shadow-xl shadow-black left-[33%] top-[80px] justify-center items-center text-base font-bold">
+        Hithat-Open</div>
+    <div onclick="play_drum('hihat')"
+        class="getar cursor-pointer absolute flex w-56 h-56 rounded-full bg-gradient-to-br from-yellow-500 to-yellow-900 shadow-2xl shadow-black -z-10 left-[16%] top-[120px] justify-center items-center text-base font-bold">
+        Hithat</div>
+    <div onclick="play_drum('crash')"
+        class="getar cursor-pointer absolute flex w-48 h-48 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-900 shadow-xl shadow-black left-[47%] top-[60px] justify-center items-center text-base font-bold">
+        crash</div>
+    <div onclick="play_drum('shareDrum')"
+        class="getar transition-all duration-300 active:scale-110 cursor-pointer absolute flex w-56 h-56 rounded-full bg-gradient-to-b bg-purple-600 shadow-2xl shadow-black left-[29%] top-[210px] -z-30 justify-center items-center  font-bold text-base text-white">
+        Share-Drum</div>
+    <div onclick="play_drum('shareStick')"
+        class="getar transition-all duration-300 active:scale-110 cursor-pointer absolute flex w-48 h-48 rounded-full bg-gradient-to-b bg-purple-600 shadow-2xl shadow-black left-[25%] top-[380px] -z-40 justify-center items-center  font-bold text-xs text-white">
+        Share-Stick</div>
+    <div onclick="play_drum('tom1')"
+        class="getar transition-all duration-300 active:scale-110 cursor-pointer absolute flex w-44 h-44 rounded-full bg-gradient-to-br bg-purple-600 shadow-2xl shadow-black top-[200px] left-[43%] -z-30 justify-center items-center font-bold text-base text-white">
+        Tom1</div>
+    <div onclick="play_drum('floorTom')"
+        class="getar transition-all duration-300 active:scale-110 cursor-pointer absolute flex w-40 h-40 rounded-full bg-gradient-to-br bg-purple-600 shadow-2xl shadow-black left-[52%] top-[260px] -z-30  text-white font-bold text-xs justify-center items-center">
+        Floor-Tom</div>
+    <div onclick="play_drum('ride')"
+        class="getar cursor-pointer absolute flex w-64 h-64 rounded-full bg-gradient-to-br from-yellow-500 to-yellow-900 shadow-xl shadow-black left-[60%] top-[140px] justify-center items-center text-base font-bold">
+        Ride</div>
+    <div onclick="play_drum('bass')"
+        class="getar transition-all duration-300 active:scale-110 cursor-pointer absolute flex w-72 h-72 rounded-full bg-white shadow-2xl shadow-black left-[37%] top-[350px] -z-50 justify-center items-center  font-bold text-lg ">
+        Bass</div>
+    <div onclick="play_drum('tom2')"
+        class="getar transition-all duration-300 active:scale-110 cursor-pointer absolute flex w-64 h-64 rounded-full bg-gradient-to-br bg-purple-600 shadow-2xl shadow-black left-[55%] -z-50 justify-center items-center  font-bold text-base top-[300px] text-white">
+        Tom2</div>
+    <div onclick="play_drum('hihatFoot')"
+        class="getar transition-all duration-300 active:scale-110 cursor-pointer absolute flex w-40 h-40 rounded-full bg-white shadow-2xl shadow-black -z-20 left-[19%] top-[310px] justify-center items-center  text-sm  font-bold">
+        Hihat-Foot</div>
+
+    <script>
+        function play_drum(chord) {
+            switch (chord) {
+                case 'hihatOpen':
+                    audioho.load();
+                    audioho.play();
+                    break;
+                case 'hihat':
+                    audiohihat.load();
+                    audiohihat.play();
+                    break;
+                case 'crash':
+                    audiocrash.load();
+                    audiocrash.play();
+                    break;
+                case 'shareDrum':
+                    audiosd.load();
+                    audiosd.play();
+                    break;
+                case 'shareStick':
+                    audioss.load();
+                    audioss.play();
+                    break;
+                case 'tom1':
+                    audiotom1.load();
+                    audiotom1.play();
+                    break;
+                case 'floorTom':
+                    audioft.load();
+                    audioft.play();
+                    break;
+                case 'ride':
+                    audioride.load();
+                    audioride.play();
+                    break;
+                case 'bass':
+                    audiobass.load();
+                    audiobass.play();
+                    break;
+                case 'tom2':
+                    audiotom2.load();
+                    audiotom2.play();
+                    break;
+                case 'hihatFoot':
+                    audiohf.load();
+                    audiohf.play();
+                    break;
+            }
+        }
+
+        document.addEventListener("keypress", function () {
+            switch (event.key) {
+                case "a":
+                    play_drum("hihatOpen");
+                    break;
+                case "s":
+                    play_drum("hihat");
+                    break;
+                case "d":
+                    play_drum("crash");
+                    break;
+                case "f":
+                    play_drum("shareDrum");
+                    break;
+                case "g":
+                    play_drum("shareStick");
+                    break;
+                case "h":
+                    play_drum("tom1");
+                    break;
+                case "j":
+                    play_drum("floorTom");
+                    break;
+                case "k":
+                    play_drum("ride");
+                    break;
+                case "l":
+                    play_drum("bass");
+                    break;
+                case "z":
+                    play_drum("tom2");
+                    break;
+                case "x":
+                    play_drum("hihatFoot");
+                    break;
+            }
+        })
+    </script>
+
+</html>

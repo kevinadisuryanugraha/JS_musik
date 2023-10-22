@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musik Javascript</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Import Gitar
+        let audioC = new Audio();
+        audioC.src = "gitar/C.mp3";
+
+        let audioAm = new Audio();
+        audioAm.src = "gitar/AM.mp3";
+
+        let audioDm = new Audio();
+        audioDm.src = "gitar/DM.mp3";
+
+        let audioG = new Audio();
+        audioG.src = "gitar/G.mp3";
+    </script>
+</head>
+
+<body style="background-image: url(image/gitar.jpg); background-size: cover;">
+    <div id="layout" class="flex justify-center items-center h-screen">
+        <div id="bggit" class=" flex items-center">
+            <div class="bg-orange-900 py-12 px-5 w-[300px] h-[300px] z-40 rounded-full">
+                <div id="gitar"
+                    class="flex w-40 h-40 rounded-full bg-slate-700 border-yellow-500 border-8 relative left-[45px] top-5">
+                </div>
+            </div>
+
+            <div class="bg-orange-700 w-[800px] absolute flex h-[100px] cursor-pointer ml-3">
+                <div id="senar1"
+                    class="senar duration-150 w-[735px] h-2 bg-yellow-500 absolute bottom-1/2 transform top-[13px] left-[65px] z-50"
+                    onclick="play_gitar('C')"></div>
+                <div id="senar2"
+                    class="senar duration-150 w-[744px] h-2 bg-yellow-500 absolute bottom-1/2 transform top-[35px] left-[56px] z-50"
+                    onclick="play_gitar('Am')"></div>
+                <div id="senar3"
+                    class="senar duration-150 w-[744px] h-2 bg-yellow-500 absolute bottom-1/2 transform top-[57px] left-[56px] z-50"
+                    onclick="play_gitar('Dm')"></div>
+                <div id="senar4"
+                    class="senar duration-150 w-[735px] h-2 bg-yellow-500 absolute bottom-1/2 transform top-[79px] left-[65px] z-50"
+                    onclick="play_gitar('G')"></div>
+            </div>
+            <div class="h-40 w-28 bg-orange-800 ml-[450px] rounded-r-2xl"></div>
+        </div>
+    </div>
+
+    <script>
+        let gitar = document.getElementById("gitar");
+        gitar.className;
+
+        let gitar_children = gitar.children;
+
+        for (let i = 0; i < gitar_children.length; i++) {
+            gitar_children[i].className =
+                "p-3 mx-2 bg-red-500 hover:bg-red-700 rounded-lg text-white w-16 h-16 flex justify-center items-center cursor-pointer";
+        }
+
+        function play_gitar(chord) {
+            switch (chord) {
+                case 'C':
+                    audioC.load();
+                    audioC.pause();
+                    audioC.currentTime = 1;
+                    audioC.play();
+                    break;
+                case 'Am':
+                    audioAm.load();
+                    audioAm.pause();
+                    audioAm.currentTime = 1;
+                    audioAm.play();
+                    break;
+                case 'Dm':
+                    audioDm.load();
+                    audioDm.pause();
+                    audioDm.currentTime = 1;
+                    audioDm.play();
+                    break;
+                case 'G':
+                    audioG.load();
+                    audioG.pause();
+                    audioG.currentTime = 1;
+                    audioG.play();
+                    break;
+            }
+        }
+
+        document.addEventListener("keypress", function () {
+            switch (event.key) {
+                case "a":
+                    play_gitar("C");
+                    break;
+                case "s":
+                    play_gitar("Am");
+                    break;
+                case "d":
+                    play_gitar("Dm");
+                    break;
+                case "f":
+                    play_gitar("G");
+                    break;
+            }
+        })
+    </script>
+</body>
+
+</html>

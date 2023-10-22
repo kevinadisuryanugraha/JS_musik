@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        let audiodo = new Audio();
+        audiodo.src = "piano/do.mp3";
+
+        let audiore = new Audio();
+        audiore.src = "piano/re.mp3";
+
+        let audiomi = new Audio();
+        audiomi.src = "piano/mi.mp3";
+
+        let audiofa = new Audio();
+        audiofa.src = "piano/fa.mp3";
+
+        let audioso = new Audio();
+        audioso.src = "piano/so.mp3";
+
+        let audiola = new Audio();
+        audiola.src = "piano/la.mp3";
+
+        let audiosi = new Audio();
+        audiosi.src = "piano/si.mp3";
+
+        let audioDO = new Audio();
+        audioDO.src = "piano/DO.mp3";
+    </script>
+</head>
+
+<body style="background-image: url(image/bg-piano.jpeg); background-size: cover;">
+    <div class="flex justify-center items-center h-screen" id="piano">
+        <div class="w-20 h-60 bg-white hover:bg-blue-300 cursor-pointer border-y-4 border-l-4  border-blue-500  text-center pt-48"
+            onclick="play_piano('do')">
+            do
+        </div>
+        <div class="w-20 h-60 bg-white hover:bg-blue-300 cursor-pointer border-y-4 border-l-4  border-blue-500  text-center pt-48"
+            onclick="play_piano('re')">
+            re
+        </div>
+        <div class="w-20 h-60 bg-white hover:bg-blue-300 cursor-pointer border-y-4 border-l-4  border-blue-500  text-center pt-48"
+            onclick="play_piano('mi')">
+            mi
+        </div>
+        <div class="w-20 h-60 bg-white hover:bg-blue-300 cursor-pointer border-y-4 border-l-4  border-blue-500  text-center pt-48"
+            onclick="play_piano('fa')">
+            fa
+        </div>
+        <div class="w-20 h-60 bg-white hover:bg-blue-300 cursor-pointer border-y-4 border-l-4  border-blue-500  text-center pt-48"
+            onclick="play_piano('so')">
+            so
+        </div>
+        <div class="w-20 h-60 bg-white hover:bg-blue-300 cursor-pointer border-y-4 border-l-4  border-blue-500  text-center pt-48"
+            onclick="play_piano('la')">
+            la
+        </div>
+        <div class="w-20 h-60 bg-white hover:bg-blue-300 cursor-pointer border-y-4 border-l-4  border-blue-500  text-center pt-48"
+            onclick="play_piano('si')">
+            si
+        </div>
+        <div class="w-20 h-60 bg-white hover:bg-blue-300 cursor-pointer border-y-4 border-l-4 border-r-4 border-blue-500  text-center pt-48"
+            onclick="play_piano('DO')">
+            DO
+        </div>
+    </div>
+
+    <script>
+        let piano = document.getElementById("piano");
+        piano.className;
+
+        let piano_children = piano.children;
+
+        // for (let i = 0; i < piano_children.length; i++) {
+        //     piano_children[i].className =
+        //         "p-3 mb-32 border-4 border-blue-500 bg-white hover:bg-gray-300 w-16 h-52 flex justify-center items-center cursor-pointer";
+        // }
+
+        function play_piano(chord) {
+            switch (chord) {
+                case 'do':
+                    audiodo.load();
+                    audiodo.pause();
+                    audiodo.currentTime = 0;
+                    audiodo.play();
+                    break;
+                case 're':
+                    audiore.load();
+                    audiore.pause();
+                    audiore.currentTime = 1;
+                    audiore.play();
+                    break;
+                case 'mi':
+                    audiomi.load();
+                    audiomi.pause();
+                    audiomi.currentTime = 1;
+                    audiomi.play();
+                    break;
+                case 'fa':
+                    audiofa.load();
+                    audiofa.pause();
+                    audiofa.currentTime = 1;
+                    audiofa.play();
+                    break;
+                case 'so':
+                    audioso.load();
+                    audioso.pause();
+                    audioso.currentTime = 1;
+                    audioso.play();
+                    break;
+                case 'la':
+                    audiola.load();
+                    audiola.pause();
+                    audiola.currentTime = 1;
+                    audiola.play();
+                    break;
+                case 'si':
+                    audiosi.load();
+                    audiosi.pause();
+                    audiosi.currentTime = 1;
+                    audiosi.play();
+                    break;
+                case 'DO':
+                    audioDO.load();
+                    audioDO.pause();
+                    audioDO.currentTime = 1;
+                    audioDO.play();
+                    break;
+            }
+        }
+
+        document.addEventListener("keypress", function () {
+            switch (event.key) {
+                // case piano
+                case "1":
+                    play_piano("do");
+                    break;
+                case "2":
+                    play_piano("re");
+                    break;
+                case "3":
+                    play_piano("mi");
+                    break;
+                case "3":
+                    play_piano("fa");
+                    break;
+                case "4":
+                    play_piano("so");
+                    break;
+                case "5":
+                    play_piano("la");
+                    break;
+                case "6":
+                    play_piano("si");
+                    break;
+                case "7":
+                    play_piano("DO");
+                    break;
+            }
+        })
+    </script>
+</body>
+
+</html>
